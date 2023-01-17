@@ -33,5 +33,15 @@ Then I split the data into training and validation data, and began creating my p
 #### Model Training and Hyperparameter Tuning
 I fit the pipeline on the training data and scored it on the validation data, looking at the accuracy, f1-score, ROC-AUC, and precision as metrics.  I noticed that the model was overfitting by observing a near perfect performance on the training data and considerably worse performance on the validation data.  I also noticed that the precision and f1-scores were very low.  Thus, I next performed a grid search and selected hyperparameters to affect these issues.  `n_estimators` and `max_depth` to reduce overfitting, and `scale_pos_weight` to balance the weight of the positive class (minority class) and increase precision. I then scored the model by submitting the model's predictions to kaggle.  I repeated the process with the Light GBM model and achieved slightly better results.
 
+### Results
+The final LGBM model had an accuracy of 93.76% with a higher false potive count than false negative count.
+
+<img src="https://user-images.githubusercontent.com/63984796/212971884-ce35d90a-d889-4e4e-a740-56b4ab77781f.png" alt="Cfmatrix" width="500" align="center"/>
+
+The model found admin and product pages to be very important, and validated that the google statistic "page value" is a good indicator of a page's sale turnover.  It also showed that direct raffic and new users were more likely to make a sale, thus spending on increasing our findability in Google searches.
+
+<img src="https://user-images.githubusercontent.com/63984796/212971886-8789cf0e-cb34-42d3-98fd-f8295756fe51.png" alt="Cfmatrix" width="500" align="center"/>
+
+
 ### Conclusion
 LGBM was considerably faster to train and slightly more performant than XGBoost in this scenario.  This approach proved effective and can be used for real world prediction of purchases as well as other website and application end points.
