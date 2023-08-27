@@ -1,5 +1,4 @@
-# Phase 3 Project
-## Maximize Website Revenue by Predicting Users' Purchases
+# Maximize Website Revenue by Predicting Users' Purchases
 
 
 ### Introduction
